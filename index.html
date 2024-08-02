@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test to speek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            resize: vertical;
+        }
+        button{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            
+        }
+        button:hover{
+            background-color: lime;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transform: scale(1.05);
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>text to speech</h1>
+    <textarea id="textToSpeak" cols="30" rows="10"></textarea>
+    <button onclick="speak()">Speak</button>
+
+    <script>
+        function speak() {
+            var text = document.getElementById("textToSpeak").value;
+            var speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'en-IN';
+            speechSynthesis.speak(speech);
+        }
+    </script>
+    
+</body>
+</html>
